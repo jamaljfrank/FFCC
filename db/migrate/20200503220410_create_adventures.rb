@@ -5,6 +5,8 @@ class CreateAdventures < ActiveRecord::Migration[6.0]
       t.string :flavor
       t.boolean :completed
 
+      t.belongs_to :user, foreign_key: true
+
       t.timestamps
     end
   end

@@ -16,24 +16,33 @@ ActiveRecord::Schema.define(version: 2020_05_03_220410) do
     t.string "title"
     t.string "flavor"
     t.boolean "completed"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_adventures_on_user_id"
   end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "tribe"
     t.text "avatar"
+    t.integer "user_id"
+    t.integer "adventure_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["adventure_id"], name: "index_characters_on_adventure_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.boolean "admin"
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "adventures", "users"
+  add_foreign_key "characters", "adventures"
+  add_foreign_key "characters", "users"
 end
