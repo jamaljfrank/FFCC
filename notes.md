@@ -15,7 +15,8 @@ Character
 
     Name:string
     Tribe:string
-    Level:integer
+    avatar:text
+    #Tribe dictates (all speed), physical strength, magical strength, defense)
 
 Adventure
 
@@ -23,5 +24,5 @@ Adventure
     Has_many :characters
 
     Title:string
-    requirements:text
+    Flavor:text
     completed:boolean
