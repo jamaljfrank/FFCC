@@ -15,14 +15,13 @@ Character
 
     Name:string
     Tribe:string
-    Image:string
     Level:integer
 
 Adventure
-Belongs_to :user
-Has_many :characters
-Has_many users, through:characters
-  
- Title:string
-Image:string
-completed:boolean
+
+    Belongs_to :user
+    Has_many :characters
+
+    Title:string
+    requirements:text
+    completed:boolean
