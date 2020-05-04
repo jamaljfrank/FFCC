@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+
+  def home
+  end
+  
   def new
   end
 
@@ -6,5 +10,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    #session.delete("user_id")
+    session.clear
+    redirect_to root_path
   end
 end
+
+
+
+
+
+
