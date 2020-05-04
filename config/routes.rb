@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get '/signup' => 'users#new'
+  
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
 
 
   resources :adventures
