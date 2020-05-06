@@ -5,8 +5,8 @@ class AdventuresController < ApplicationController
     end
 
     def create
-        current_user.adventures << Adventure.create(adventure_params)
-        if current_user.save 
+        @adventure =  current_user.adventures.build(adventure_params)
+        if @adventure.save 
             
             redirect_to user_path(current_user)
         else 

@@ -2,7 +2,16 @@
 <% if admin%>
     <%= link_to "Create Adventure", new_adventure_path %> 
     <%end%>
-
+<br>
 <%= link_to "Create Your Character", new_character_path %> 
+<br>
 
+
+    <% Adventure.all.each do |a| %> 
+    <%= a.title %>
+    <br>
+    <br>
+    <%= a.flavor%>
+    
+    <%end%>
 <%# Add character nested form to user sign up%>
