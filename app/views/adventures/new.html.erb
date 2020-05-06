@@ -1,0 +1,14 @@
+<h1> New Adventure </h1>
+
+<%= form_for(@adventure) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+<br>
+<br>
+    <%= f.label :flavor %>
+    <%= f.text_area :flavor %>
+<br>
+<br>
+    <%= f.submit "Submit" %>
+
+<%end%>
