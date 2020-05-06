@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
-  # def home
-  # end
+  def home
+    redirect_to user_path(current_user) if logged_in?
+  end
   
   # def new
   # end
