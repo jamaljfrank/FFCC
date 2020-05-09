@@ -5,6 +5,7 @@
 <br>
     <%= link_to "Add Party Member!", new_user_character_path(@user) %> 
 <br>
+    <%= link_to "Current Party", user_characters_path(@user) %> 
 
 
     <% Adventure.all.each do |adv| %>

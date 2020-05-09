@@ -1,0 +1,8 @@
+<h1>Party Members</h1>
+
+<% @characters.each do |char|%>
+    <h2><%= char.name %></h2>
+<br>
+<br>
+    <%= char.tribe %>
+<%end%>
