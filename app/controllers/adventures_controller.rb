@@ -4,6 +4,10 @@ class AdventuresController < ApplicationController
         @adventure = Adventure.new
     end
 
+    def show
+        @dventure =Adventure.find_by(:id => params[:id])
+    end
+
     def create
         @adventure =  current_user.adventures.build(adventure_params)
         if @adventure.save 
@@ -13,6 +17,10 @@ class AdventuresController < ApplicationController
             # Error message
             render 'new'
         end 
+    end
+
+    def edit
+        @adventure = Adventure.find_by(:id => params[:id])
     end
 
     private
