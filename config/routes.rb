@@ -10,9 +10,12 @@ Rails.application.routes.draw do
 
 
 
-
-  resources :adventures
+  resources :users do
+    resources :characters, only: [:new, :create, :index]
+    
+  end
   resources :characters
-  resources :users
+  resources :adventures
+  
 
 end

@@ -26,3 +26,8 @@ Adventure
     Title:string
     Flavor:text
     completed:boolean
+
+user_character GET users/:id/characters = index
+get users/:id/characters/new =
+
+get adventure/
