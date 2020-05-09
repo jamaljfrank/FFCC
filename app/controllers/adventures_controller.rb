@@ -5,7 +5,7 @@ class AdventuresController < ApplicationController
     end
 
     def show
-        @dventure =Adventure.find_by(:id => params[:id])
+        @adventure =Adventure.find_by(:id => params[:id])
     end
 
     def create
@@ -21,6 +21,16 @@ class AdventuresController < ApplicationController
 
     def edit
         @adventure = Adventure.find_by(:id => params[:id])
+    end
+
+    def update
+        @adventure = Adventure.find_by(:id => params[:id])
+        if @adventure.update(adventure_params)
+            redirect_to adventure_path(@adventure)
+        else
+            #error message
+            redirect_to edit_attraction_path
+        end
     end
 
     private

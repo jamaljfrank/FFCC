@@ -1,4 +1,8 @@
 <h1>Adventure Details</h1>
-<% if admin%>
-            <%= link_to "Edit Adventure", edit_adventure_path(adv) %> 
-        <%end%>
+
+<h2><%= @adventure.title%></h2>
+<%= @adventure.flavor%>
+
+    <% if admin%>
+        <%= link_to "Edit Adventure", edit_adventure_path %> 
+    <%end%>

@@ -3,14 +3,10 @@ class Adventure < ApplicationRecord
     has_many :characters
     has_many :users, through: :characters
 
-    # Add validations
-    def adventure_index
-        Adventure.all.each do |adv| 
-            link_to adv.title, adventure_path(adv) 
-            <br>
-            <br>
-            adv.flavor
-        end
-        
-    end
+    validates :title, presence: true
+    validates :title, uniqueness: true
+    validates :flavor, presence: true
+    validates :flavor, uniqueness: true
+
+    
 end
