@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get "/auth/google_oauth2/callback" => 'sessions#create'
-
-
+  get '/auth/:provider/callback', to: 'sessions#google'
+  get '/auth/failure', to: redirect('/')
 
   resources :users do
     resources :characters, only: [:new, :create, :index]

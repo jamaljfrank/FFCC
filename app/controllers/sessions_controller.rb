@@ -11,25 +11,24 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
     @user = User.find_by(email: params[:user][:email])
 
     if @user.save && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id 
       redirect_to user_path(@user)
-    elsif #Google Sign In
-      @user = User.find_or_create_by(email: auth["info"]["email"]) do |user|
-        user.password = SecureRandom.hex
-      end
-      if @user.save
-        session[:user_id] = @user.id 
-        redirect_to user_path(@user)
-      end
-    else
 
+    else
       flash[:message] = "Invalid login. It happens." 
       redirect_to root_path
     end
+  end
+
+  def google
+    @user = User.from_omniauth(auth)
+    @user.save
+    session[:user_id] = @user.id
+    redirect_to root_path
+    
   end
 
   private
