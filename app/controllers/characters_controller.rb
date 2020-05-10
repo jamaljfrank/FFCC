@@ -1,6 +1,5 @@
 class CharactersController < ApplicationController
 
-    TRIBES = ["Clavat", "Lilty", "Selkie", "Yuke"]
 
     def index
         @characters = Character.led_by(current_user.id)

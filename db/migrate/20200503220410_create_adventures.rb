@@ -3,7 +3,7 @@ class CreateAdventures < ActiveRecord::Migration[6.0]
     create_table :adventures do |t|
       t.string :title
       t.string :flavor
-      t.boolean :completed
+      t.boolean :completed, default: false, null: false
 
       t.belongs_to :user, foreign_key: true
 

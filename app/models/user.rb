@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
     has_many :characters
     has_many :adventures, through: :characters
-    # has_many :played_adventures, through: :characters,
+    # has_many :completed_adventures, through: :characters,
     #     source: :adventure
     has_secure_password
     

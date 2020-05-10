@@ -7,6 +7,7 @@ class Adventure < ApplicationRecord
     validates :title, uniqueness: true
     validates :flavor, presence: true
     validates :flavor, uniqueness: true
+    #scope :completed, -> {where(completed: = "true")}
 
     
 end
