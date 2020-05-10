@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get "/auth/google_oauth2/callback" => 'sessions#create'
+
 
 
   resources :users do
