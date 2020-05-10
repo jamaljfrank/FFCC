@@ -1,0 +1,21 @@
+<h1>Welcome to the party!</h1>
+
+
+
+<%= form_for(@character) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+<br>
+<br>
+<p>
+    <b>Tribe</b><br />
+    <%= f.radio_button :tribe, 'Clavat' %> Clavat<br />
+    <%= f.radio_button :tribe, 'Lilty' %> Lilty<br />
+    <%= f.radio_button :tribe, 'Selkie' %> Selkie<br />
+    <%= f.radio_button :tribe, 'Yuke' %> Yuke<br />
+</p>
+<br>
+<br>
+    <%= f.submit "Submit" %>
+    
+<%end%>

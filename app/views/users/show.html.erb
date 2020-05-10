@@ -3,11 +3,13 @@
         <%= link_to "Create Adventure", new_adventure_path %> 
     <%end%>
 <br>
+<br>
     <%= link_to "Add Party Member!", new_user_character_path(@user) %> 
 <br>
     <%= link_to "Current Party", user_characters_path(@user) %> 
-
-
+<br>
+<br>
+<h2>Adventures</h1>
     <% Adventure.all.each do |adv| %>
         <%= link_to adv.title, adventure_path(adv) %>
         <br>
@@ -15,7 +17,4 @@
         <%= adv.flavor %>
         
     <% end %> 
-        
-        
-    
-<%# Add character nested form to user sign up%>
+<%# Add User log in check%>
