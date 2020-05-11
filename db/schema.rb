@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_220410) do
   create_table "adventures", force: :cascade do |t|
     t.string "title"
     t.string "flavor"
-    t.boolean "completed"
+    t.boolean "completed", default: false, null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -5,4 +5,7 @@
 
     <% if admin%>
         <%= link_to "Edit Adventure", edit_adventure_path %> 
+        <br>
+        <br>
+        <%= link_to "Delete Adventure", adventure_path, method: :delete%>
     <%end%>

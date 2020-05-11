@@ -2,6 +2,7 @@ class AdventuresController < ApplicationController
 
     def new
         @adventure = Adventure.new
+        @user = current_user
     end
 
     def show
@@ -15,6 +16,7 @@ class AdventuresController < ApplicationController
             redirect_to user_path(current_user)
         else 
             # Error message
+            binding.pry
             render 'new'
         end 
     end
@@ -31,6 +33,12 @@ class AdventuresController < ApplicationController
             #error message
             redirect_to edit_attraction_path
         end
+    end
+
+    def destroy 
+        @adventure = Adventure.find(params[:id])
+        @adventure.destroy 
+        redirect_to adventures_path
     end
 
     private

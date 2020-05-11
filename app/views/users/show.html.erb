@@ -1,6 +1,6 @@
 <h1> User Home </h1>
     <% if admin%>
-        <%= link_to "Create Adventure", new_adventure_path %> 
+        <%= link_to "Create Adventure", new_user_adventure_path(@user) %> 
     <%end%>
 <br>
 <br>
@@ -12,10 +12,11 @@
 <h2>Adventures</h1>
     <% Adventure.all.each do |adv| %>
         <%= link_to adv.title, adventure_path(adv) %>
-        <%= adv.completed %>
         <br>
+        <%=  status(adv) %>
         <br>
-        <%= adv.flavor %>
-        
+        <p>
+        <%= adv.flavor%>
+        </p>
     <% end %> 
 <%# Add User log in check%>
