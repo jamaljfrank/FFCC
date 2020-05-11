@@ -6,6 +6,12 @@
         <%= link_to "Delete Adventure", adventure_path, method: :delete%>
     <%end%>
 <h2><%= @adventure.title%></h2>
+<p>
+<%= status(@adventure)%>
+</p>
+<br>
+
 <%= @adventure.flavor%>
+
 
    

@@ -2,6 +2,7 @@
     <%= f.text_field :title %>
     <br>
     <%= f.text_area :flavor %>
-
+    <br>
+    <%= f.range_field :reqs, in: 1..4 %>
     <%= f.submit %>
 <% end %> 

@@ -47,7 +47,7 @@ class AdventuresController < ApplicationController
     private
 
     def adventure_params 
-        params.require(:adventure).permit(:title, :flavor)
+        params.require(:adventure).permit(:title, :flavor, :reqs)
     end 
 end
 
