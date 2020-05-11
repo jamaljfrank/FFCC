@@ -42,7 +42,7 @@ class AdventuresController < ApplicationController
 
     def destroy 
         current_adventure.destroy 
-        redirect_to adventures_path
+        redirect_to root_path
     end
 
     private

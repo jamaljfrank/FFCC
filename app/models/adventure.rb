@@ -9,10 +9,5 @@ class Adventure < ApplicationRecord
     validates :flavor, uniqueness: true
     #scope :completed_quests, -> {where(completed: = "true")}
 
-    def complete_adventure
-        @adventure = Adventure.find_by(:id => params[:id])
-        if current_user.characters.count >= @adventure.reqs 
-            adventure.toggle!(:completed) 
-        end
-    end
+    
 end
