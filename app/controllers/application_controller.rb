@@ -17,9 +17,12 @@ class ApplicationController < ActionController::Base
     end 
 
     def current_user
-        #@current_user
         @user ||= User.find_by(id: session[:user_id]) 
     end 
+    
+    def current_adventure
+        @adventure ||= Adventure.find_by(:id => params[:id])
+    end
 end
 
 

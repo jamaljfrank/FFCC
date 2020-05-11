@@ -10,7 +10,7 @@ class AdventuresController < ApplicationController
     end
 
     def show
-        @adventure =Adventure.find_by(:id => params[:id])
+        current_adventure
     end
 
     def create
@@ -25,11 +25,11 @@ class AdventuresController < ApplicationController
     end
 
     def edit
-        @adventure = Adventure.find_by(:id => params[:id])
+        current_adventure
     end
 
     def update
-        @adventure = Adventure.find_by(:id => params[:id])
+        current_adventure
         if @adventure.update(adventure_params)
             redirect_to adventure_path(@adventure)
         else
@@ -38,9 +38,10 @@ class AdventuresController < ApplicationController
         end
     end
 
+    
+
     def destroy 
-        @adventure = Adventure.find(params[:id])
-        @adventure.destroy 
+        current_adventure.destroy 
         redirect_to adventures_path
     end
 
