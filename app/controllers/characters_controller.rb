@@ -15,6 +15,7 @@ class CharactersController < ApplicationController
             redirect_to characters_path(current_user)
         else 
             # Error message
+            binding.pry
             render 'new'
         end 
     end

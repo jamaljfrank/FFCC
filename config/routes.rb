@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :adventures
   end
-  resources :characters
   resources :adventures
+    resources :characters, only: [:new, :create, :index]
+  end
+  resources :characters
   
 
 end

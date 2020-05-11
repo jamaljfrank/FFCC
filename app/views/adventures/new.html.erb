@@ -9,7 +9,8 @@
     <%= f.text_area :flavor, required: true, size: "50x10" %>
 <br>
 <br>
-    <%= f.range_field :reqs, in: 1..4 %>
+    <%= f.label :reqs %>
+    <%= f.text_field :reqs, required: true %>
 <br>
 <br>    
     <%= f.submit "Submit" %>
