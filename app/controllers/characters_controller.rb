@@ -1,18 +1,18 @@
 class CharactersController < ApplicationController
 
+    def new 
+        @character = Character.new
+    end
 
     def index
         @characters = Character.led_by(current_user.id)
     end
 
-    def new 
-        @character = Character.new
-    end
-
     def create 
         @character = current_user.characters.build(character_params)
+        @character.adventure_id = current_user.id
         if @character.save 
-            redirect_to characters_path(current_user)
+            redirect_to root_path
         else 
             # Error message
             binding.pry

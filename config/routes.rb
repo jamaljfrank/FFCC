@@ -11,16 +11,16 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#google'
   get '/auth/failure', to: redirect('/')
 
+  resources :adventures 
+  resources :characters
+  
   resources :users do
     resources :characters, only: [:new, :create, :index]
   end
   resources :users do
     resources :adventures
   end
-  resources :adventures
-    resources :characters, only: [:new, :create, :index]
-  end
-  resources :characters
+  
   
 
 end

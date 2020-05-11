@@ -6,7 +6,7 @@ class AdventuresController < ApplicationController
     
     def new
         @adventure = Adventure.new
-        @user = current_user
+        #@user = current_user
     end
 
     def show
@@ -34,7 +34,7 @@ class AdventuresController < ApplicationController
             redirect_to adventure_path(@adventure)
         else
             #error message
-            redirect_to edit_attraction_path
+            redirect_to edit_adventure_path
         end
     end
 
