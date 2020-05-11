@@ -1,11 +1,11 @@
 <h1>Adventure Details</h1>
-
-<h2><%= @adventure.title%></h2>
-<%= @adventure.flavor%>
-
-    <% if admin%>
+<% if admin%>
         <%= link_to "Edit Adventure", edit_adventure_path %> 
         <br>
         <br>
         <%= link_to "Delete Adventure", adventure_path, method: :delete%>
     <%end%>
+<h2><%= @adventure.title%></h2>
+<%= @adventure.flavor%>
+
+   

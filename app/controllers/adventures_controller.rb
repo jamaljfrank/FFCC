@@ -1,5 +1,9 @@
 class AdventuresController < ApplicationController
 
+    def index
+        redirect_to root_path
+    end
+    
     def new
         @adventure = Adventure.new
         @user = current_user
@@ -15,8 +19,7 @@ class AdventuresController < ApplicationController
             
             redirect_to user_path(current_user)
         else 
-            # Error message
-            binding.pry
+            flash[:message] = "Adventure exists. Try another, please!"
             render 'new'
         end 
     end

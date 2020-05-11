@@ -2,13 +2,13 @@
 
 <%= form_for(@adventure) do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, required: true %>
 <br>
 <br>
     <%= f.label :flavor %>
-    <%= f.text_area :flavor, size: "50x10" %>
+    <%= f.text_area :flavor, required: true, size: "50x10" %>
 <br>
 <br>
     <%= f.submit "Submit" %>
-
+<%= flash[:message] if flash[:message]%>
 <%end%>
