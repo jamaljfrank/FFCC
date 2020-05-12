@@ -15,7 +15,7 @@ class CharactersController < ApplicationController
             redirect_to root_path
         else 
             # Error message
-            binding.pry
+            
             render 'new'
         end 
     end

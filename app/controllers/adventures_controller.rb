@@ -6,7 +6,6 @@ class AdventuresController < ApplicationController
     
     def new
         @adventure = Adventure.new
-        #@user = current_user
     end
 
     def show
