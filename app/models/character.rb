@@ -5,6 +5,6 @@ class Character < ApplicationRecord
     validates :name, presence: true
     validates :name, uniqueness: true
     validates :tribe, presence: true
-    validates :tribe, uniqueness: true
+    
     scope :led_by, ->(user_id) {where("user_id = ?", user_id)}
 end
