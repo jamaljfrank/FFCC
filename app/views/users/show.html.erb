@@ -3,6 +3,11 @@
         <%= link_to "Create Adventure", new_adventure_path %> 
     <%end%>
 <br>
+    <% flash.each do |type, msg| %>
+        <h2>
+        <%= msg %>
+        </h2>
+    <% end %>
 <br>
     <br>
 <br>
