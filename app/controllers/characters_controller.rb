@@ -13,7 +13,7 @@ class CharactersController < ApplicationController
         if @character.save 
             redirect_to root_path
         else 
-            flash[:message] = "Character name exists. Please try again"
+            flash[:message] = "Sorry, one character at a time."
             render 'new'
         end 
     end
