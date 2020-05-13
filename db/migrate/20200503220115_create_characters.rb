@@ -3,10 +3,10 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
     create_table :characters do |t|
       t.string :name
       t.string :tribe
-      t.text :avatar
+      t.integer :lv
       
       t.references :user, foreign_key: true
-      t.references :adventure, foreign_key: true
+      t.references :battle, foreign_key: true
 
       t.timestamps
     end

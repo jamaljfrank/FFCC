@@ -6,7 +6,7 @@ User Character
 
     email:string                                     name:string
     password_digest:string                           tribe:string
-    admin:boolean                                    lvl:integer
+    admin:boolean                                    lv:integer
                                                      (Tribe and Lvl dictates likelihood of winning)
 
 Adventure Battle
