@@ -3,7 +3,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
     create_table :characters do |t|
       t.string :name
       t.string :tribe
-      t.integer :lv
+      t.integer :lv, default: 1, null: false
       
       t.references :user, foreign_key: true
       t.references :battle, foreign_key: true
