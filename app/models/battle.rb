@@ -25,7 +25,7 @@ def dice_roll
   character.lv + rand(0..5)
 end
 
-def results
+def self.results
   
   if character.tribe == "Clavat"
     dice_roll >= adventure.clavat_difficulty ? level_up : game_over
