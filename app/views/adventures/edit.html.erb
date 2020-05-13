@@ -1,5 +1,4 @@
 <h1> Edit Adventure </h1>
-
 <%= form_for(@adventure) do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title, required: true %>
@@ -7,6 +6,10 @@
 <br>
     <%= f.label :flavor %>
     <%= f.text_area :flavor, required: true, size: "50x10" %>
+<br>
+<br>
+    <%= f.label :boss %>
+    <%= f.text_field :boss, required: true %>
 <br>
 <br>
     <%= f.label :boss_lv %>
