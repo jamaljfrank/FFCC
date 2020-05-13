@@ -1,4 +1,9 @@
 <h1>Adventure Details</h1>
+<% flash.each do |type, msg| %>
+        <h2>
+        <%= msg %>
+        </h2>
+    <% end %>
 <% if admin%>
         <%= link_to "Edit Adventure", edit_adventure_path %> 
         <br>

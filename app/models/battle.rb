@@ -8,7 +8,7 @@ class Battle < ApplicationRecord
       character.update(:lv => new_lv)
       "You leveled up!"
     else
-      "This adventure is no match for you now. Onward!"
+      "This adventure is no match for you now! Choose another."
     end
   end
 

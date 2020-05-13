@@ -16,10 +16,10 @@ class AdventuresController < ApplicationController
         @adventure =  current_user.adventures.build(adventure_params)
         if @adventure.save 
             
-            redirect_to user_path(current_user)
+            redirect_to user_path(current_user), :notice => "Adventure created!"
         else 
-            flash[:message] = "Adventure exists. Try another, please!"
-            render 'new'
+           render 'new', :notice => "Adventure exists. Try another."
+            
         end 
     end
 
@@ -30,10 +30,9 @@ class AdventuresController < ApplicationController
     def update
         current_adventure
         if @adventure.update(adventure_params)
-            redirect_to adventure_path(@adventure)
+            redirect_to adventure_path(@adventure), :notice => "Update successful!"
         else
-            #error message
-            redirect_to edit_adventure_path
+            redirect_to edit_adventure_path, :notice => "Title or flavor text exists. Please try another."
         end
     end
 
