@@ -40,10 +40,8 @@ ActiveRecord::Schema.define(version: 2020_05_13_040205) do
     t.string "tribe"
     t.integer "lv", default: 1, null: false
     t.integer "user_id"
-    t.integer "battle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["battle_id"], name: "index_characters_on_battle_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -58,6 +56,5 @@ ActiveRecord::Schema.define(version: 2020_05_13_040205) do
   add_foreign_key "adventures", "users"
   add_foreign_key "battles", "adventures"
   add_foreign_key "battles", "characters"
-  add_foreign_key "characters", "battles"
   add_foreign_key "characters", "users"
 end

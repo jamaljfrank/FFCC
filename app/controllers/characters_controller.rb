@@ -10,12 +10,10 @@ class CharactersController < ApplicationController
 
     def create 
         @character = current_user.characters.build(character_params)
-        @character.adventure_id = current_user.id
         if @character.save 
             redirect_to root_path
         else 
-            # Error message
-            binding.pry
+            flash[:message] = "Character name exists. Please try again"
             render 'new'
         end 
     end

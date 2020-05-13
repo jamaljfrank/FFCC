@@ -1,18 +1,18 @@
 <h1>Welcome to the party!</h1>
-
+<%= flash[:message] if flash[:message]%>
 
 
 <%= form_for(@character) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
 <br>
 <br>
 <p>
-    <b>Tribe</b><br />
-    <%= f.radio_button :tribe, 'Clavat' %> Clavat
-    <%= f.radio_button :tribe, 'Lilty' %> Lilty
-    <%= f.radio_button :tribe, 'Selkie' %> Selkie
-    <%= f.radio_button :tribe, 'Yuke' %> Yuke
+    <b>Tribe</b>
+    <%= f.radio_button :tribe, 'Clavat', required: true %> Clavat
+    <%= f.radio_button :tribe, 'Lilty', required: true %> Lilty
+    <%= f.radio_button :tribe, 'Selkie', required: true %> Selkie
+    <%= f.radio_button :tribe, 'Yuke', required: true %> Yuke
 </p>
 <br>
 <br>

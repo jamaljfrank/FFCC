@@ -18,10 +18,4 @@ Rails.application.routes.draw do
   resources :users do
     resources :characters, only: [:new, :create, :index]
   end
-  resources :battles do
-    resources :characters, only: [:update, :destroy]
-  end
-  
-  
-
 end

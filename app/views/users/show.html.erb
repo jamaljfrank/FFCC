@@ -1,12 +1,12 @@
 <h1> User Home </h1>
     <% if admin%>
-        <%= link_to "Create Adventure", new_user_adventure_path(@user) %> 
+        <%= link_to "Create Adventure", new_adventure_path %> 
     <%end%>
 <br>
 <br>
     <br>
 <br>
-    <%= link_to "New Character", new_character_path %>
+    <%= link_to "New Character", new_user_character_path(@user) %>
 <br>
     <%= link_to "Current Party", user_characters_path(@user) %> 
 <br>
@@ -14,8 +14,6 @@
 <h2>Adventures</h1>
     <% Adventure.all.each do |adv| %>
         <%= link_to adv.title, adventure_path(adv) %>
-        <br>
-        <%=  status(adv) %><br><b> Party Members Required: </b> <%= adv.reqs %>
         <br>
         <p>
         <%= adv.flavor%>
