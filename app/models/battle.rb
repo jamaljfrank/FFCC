@@ -14,7 +14,6 @@ class Battle < ApplicationRecord
 
   def game_over 
     character.destroy
-    redirect_to root_path
     "Game Over"
   end
 

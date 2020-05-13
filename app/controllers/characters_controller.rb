@@ -12,10 +12,9 @@ class CharactersController < ApplicationController
     def create 
         @character = current_user.characters.build(character_params)
         if @character.save 
-            redirect_to root_path
+            redirect_to root_path, :notice => "You're ready for an Adventure!"
         else 
-            flash[:message] = "Sorry, one character at a time."
-            render 'new'
+            render 'new', :notice => "Sorry, one character at a time."
         end 
     end
 

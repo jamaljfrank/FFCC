@@ -1,5 +1,9 @@
 <h1> Welcome To The Caravan </h1>
-<%= flash[:message] if flash[:message]%>
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
 <%= form_for :user do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email, required: true %>

@@ -40,7 +40,7 @@ class AdventuresController < ApplicationController
 
     def destroy 
         current_adventure.destroy 
-        redirect_to root_path
+        redirect_to root_path, :notice => "Adventure deleted"
     end
 
     private

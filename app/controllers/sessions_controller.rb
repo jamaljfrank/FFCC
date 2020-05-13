@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    #session.delete("user_id")
     session.clear
     redirect_to root_path
   end
@@ -14,10 +13,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.save && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id 
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), :notice => "Welcome back!"
     else
-      flash[:message] = "Invalid login. It happens." 
-      redirect_to root_path
+      redirect_to root_path, :notice => "Invalid login. It happens." 
     end
   end
 
