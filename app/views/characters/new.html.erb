@@ -1,6 +1,9 @@
 <h1>Welcome to the party!</h1>
-<%= flash[:message] if flash[:message]%>
-
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
 
 <%= form_for(@character) do |f| %>
     <%= f.label :name %>
