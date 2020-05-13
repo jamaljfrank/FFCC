@@ -1,6 +1,7 @@
 User Character
 
     has_many :characters                             belongs_to :user
+                                                     has_many :battles
     has_many :adventures                             has_many :adventures, through: :battles
 
     email:string                                     name:string
@@ -11,6 +12,7 @@ User Character
 Adventure Battle
 
     belongs_to :user                                 belongs_to :charcter
+    has_many :battles
     has_many :characters, through: :battles          belongs_to :adventure
 
     title:string
@@ -56,10 +58,16 @@ battle instance methods:
         end
     end
 
+    def game_over
+        self.character.destroy
+        redirect_to root_path
+        #message "Game Over"
+    end
+
 
 
 
     def update #for character controller
         @battle = Battle.new(:character_id => current_user.id, :adventure_id => params[:adventure_id])
-        redirect_to root_path, :notice => @battle.results
+        redirect_to root_path, :flash => @battle.results
     end
