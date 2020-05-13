@@ -9,10 +9,28 @@
     <%= f.text_area :flavor, required: true, size: "50x10" %>
 <br>
 <br>
-    <%= f.label :reqs %>
-    <%= f.text_field :reqs, required: true %>
+    <%= f.label :boss_lv %>
+    <%= f.number_field :boss_lv, required: true %>
 <br>
 <br>    
+    <%= f.label :clavat_difficulty %>
+    <%= f.number_field :clavat_difficulty, required: true %>
+<br>
+<br>    
+    <%= f.label :lilty_difficulty %>
+    <%= f.number_field :lilty_difficulty, required: true %>
+<br>
+<br>    
+    <%= f.label :selkie_difficulty %>
+    <%= f.number_field :selkie_difficulty, required: true %>
+<br>
+<br>    
+    <%= f.label :yuke_difficulty %>
+    <%= f.number_field :yuke_difficulty, required: true %>
+<br>
+<br>    
+
+
     <%= f.submit "Submit" %>
 <%= flash[:message] if flash[:message]%>
 <%end%>
