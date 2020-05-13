@@ -6,9 +6,11 @@
 <br>
     <br>
 <br>
+    <% if current_user.characters.empty? %>
     <%= link_to "New Character", new_user_character_path(@user) %>
+    <%end%>
 <br>
-    <%= link_to "Current Party", user_characters_path(@user) %> 
+    <%= link_to "Character Stats", user_characters_path(@user) %> 
 <br>
 <br>
 <h2>Adventures</h1>

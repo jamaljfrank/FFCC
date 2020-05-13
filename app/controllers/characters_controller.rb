@@ -18,15 +18,10 @@ class CharactersController < ApplicationController
         end 
     end
 
-    def update
-        @battle = Battle.new(:character_id => current_user.id, :adventure_id => params[:adventure_id])
-        redirect_to root_path, :flash => @battle.results
-    end
-
     private
 
     def character_params 
-        params.require(:character).permit(:name, :tribe)
+        params.require(:character).permit(:name, :tribe, :lv)
     end
 
     

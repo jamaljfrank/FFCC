@@ -3,14 +3,14 @@
         <%= link_to "Edit Adventure", edit_adventure_path %> 
         <br>
         <br>
-        <%= link_to "Delete Adventure", adventure_path, method: :delete%>
+        <%= link_to "Delete Adventure", adventure_path, :method => :delete %>
     <%end%>
 <h2><%= @adventure.title%></h2>
 <b> Boss name: <%= @adventure.boss%> </b>
 <p>
 <%= @adventure.flavor%>
 </p>
-
+<%= button_to 'Start Adventure', {:controller => "battles", :action => "create", :adventure_id => @adventure.id}, :method => :post %>
 
 
 
