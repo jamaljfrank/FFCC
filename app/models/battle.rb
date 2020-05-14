@@ -24,16 +24,16 @@ class Battle < ApplicationRecord
   def results
   
     if character.tribe == "Clavat"
-      dice_roll >= adventure.clavat_difficulty ? level_up : game_over
+      dice_roll + bonus >= adventure.clavat_difficulty ? level_up : game_over
 
     elsif character.tribe == "Lilty"
-      dice_roll >= adventure.lilty_difficulty ? level_up : game_over
+      dice_roll + bonus >= adventure.lilty_difficulty ? level_up : game_over
 
     elsif character.tribe == "Selkie"
-      dice_roll >= adventure.selkie_difficulty ? level_up : game_over
+      dice_roll + bonus >= adventure.selkie_difficulty ? level_up : game_over
 
     else character.tribe == "Yuke"
-      dice_roll >= adventure.yuke_difficulty ? level_up : game_over
+      dice_roll + bonus >= adventure.yuke_difficulty ? level_up : game_over
     end
   end
 end

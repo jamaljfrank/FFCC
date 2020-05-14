@@ -1,22 +1,35 @@
 <h1>Adventure Details</h1>
-<% flash.each do |type, msg| %>
-        <h2>
+    <% flash.each do |type, msg| %>
+    <h2>
         <%= msg %>
-        </h2>
+    </h2>
     <% end %>
+
 <% if admin%>
-        <%= link_to "Edit Adventure", edit_adventure_path %> 
-        <br>
-        <br>
-        <%= link_to "Delete Adventure", adventure_path, :method => :delete %>
-    <%end%>
+    <%= link_to "Edit Adventure", edit_adventure_path %> 
+<br>
+<br>
+    <%= link_to "Delete Adventure", adventure_path, :method => :delete %>
+<%end%>
+
 <h2><%= @adventure.title%></h2>
 <b> Boss name: <%= @adventure.boss%> </b>
 <p>
 <%= @adventure.flavor%>
 </p>
 <% if !current_user.characters.empty?%>
-<%= button_to 'Prepare for battle!', new_battle_path %>
+<%= form_for :battle do |f| %>
+    
+<p>
+    <b>Select your difficulty</b>
+    <%= f.radio_button :bonus, 0, required: true %> Normal
+    <%= f.radio_button :bonus, 2, required: true %> Easy
+</p>
+<br>
+<br>
+    <%= f.submit "Begin" %>
+
+<% end %>
 <% end %>
 
 

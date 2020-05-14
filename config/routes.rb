@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'battle/new'
+  post '/adventures/:id', to: 'battles#create'
   root 'sessions#home'
   
   get '/signup', to: 'users#new'
@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   resources :adventures 
   resources :characters
   resources :battles
+  
 
   resources :users do
     resources :characters, only: [:new, :create, :index]
   end
+
+  
 end
