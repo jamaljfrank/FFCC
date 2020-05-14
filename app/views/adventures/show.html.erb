@@ -16,7 +16,7 @@
 <%= @adventure.flavor%>
 </p>
 <% if !current_user.characters.empty?%>
-<%= button_to 'Start Adventure', {:controller => "battles", :action => "create", :adventure_id => @adventure.id}, :method => :post %>
+<%= button_to 'Prepare for battle!', new_battle_path %>
 <% end %>
 
 
