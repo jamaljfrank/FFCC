@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  post '/adventures/:id', to: 'battles#create'
+  
   root 'sessions#home'
+
+  post '/adventures/:id', to: 'battles#create'
+  
+  get '/users/:id/party', to: 'characters#index'
   
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  
+
   post '/', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 

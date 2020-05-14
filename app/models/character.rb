@@ -7,7 +7,7 @@ class Character < ApplicationRecord
     validates :tribe, presence: true
     validate :party_of_one, :on => :create
     
-    scope :led_by, ->(user) {where("user_id = ?", user.id)}
+    scope :party, ->(user) {where("user_id = ?", user.id)}
 
     def party_of_one
         if self.user.characters.count > 1
