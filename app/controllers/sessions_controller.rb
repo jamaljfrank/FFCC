@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def home
     redirect_to user_path(current_user) if logged_in?
   end
@@ -12,10 +11,10 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.save && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id 
-      redirect_to user_path(@user), :notice => "Welcome back!"
+      session[:user_id] = @user.id
+      redirect_to user_path(@user), notice: 'Welcome back!'
     else
-      redirect_to root_path, :notice => "Invalid login. It happens." 
+      redirect_to root_path, notice: 'Invalid login. It happens.'
     end
   end
 
@@ -24,16 +23,11 @@ class SessionsController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     redirect_to root_path
-    
   end
 
   private
- 
+
   def auth
     request.env['omniauth.auth']
   end
 end
-
-
-
-

@@ -5,16 +5,16 @@ class Battle < ApplicationRecord
   def level_up
     if adventure.boss_lv >= character.lv
       new_lv = character.lv += 1
-      character.update(:lv => new_lv)
-      "You leveled up!"
+      character.update(lv: new_lv)
+      'You leveled up!'
     else
-      "This adventure is no match for you now! Choose another."
+      'This adventure is no match for you now! Choose another.'
     end
   end
 
-  def game_over 
+  def game_over
     character.destroy
-    "Game Over"
+    'Game Over'
   end
 
   def dice_roll
@@ -22,17 +22,14 @@ class Battle < ApplicationRecord
   end
 
   def results
-  
-    if character.tribe == "Clavat"
+    if character.tribe == 'Clavat'
       dice_roll + bonus >= adventure.clavat_difficulty ? level_up : game_over
-
-    elsif character.tribe == "Lilty"
+    elsif character.tribe == 'Lilty'
       dice_roll + bonus >= adventure.lilty_difficulty ? level_up : game_over
-
-    elsif character.tribe == "Selkie"
+    elsif character.tribe == 'Selkie'
       dice_roll + bonus >= adventure.selkie_difficulty ? level_up : game_over
-
-    else character.tribe == "Yuke"
+    else
+      character.tribe == 'Yuke'
       dice_roll + bonus >= adventure.yuke_difficulty ? level_up : game_over
     end
   end

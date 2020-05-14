@@ -1,3 +1,1 @@
-module AdventuresHelper
-    
-end
+module AdventuresHelper; end

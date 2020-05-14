@@ -1,2 +1,1 @@
-module BattleHelper
-end
+module BattleHelper; end
