@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
     end
 
     def index
-        @characters = Character.led_by(current_user.id)
+        @characters = Character.led_by(current_user)
     end
 
     def create 
