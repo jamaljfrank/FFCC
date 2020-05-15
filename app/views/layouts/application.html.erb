@@ -12,15 +12,14 @@
   <body>
     <div>
       <% if logged_in? %>
-      <%= link_to "Log Out", logout_path, method: "delete" %>
-      <br>
-      <br>
-      <%= link_to "Home", root_path %>
-      <br>
-      <br>
-      <%= link_to "Character Stats", user_characters_path(@user) %>
+      <%= link_to "Log Out", logout_path, method: "delete" %> |
+      <%= link_to "Home", root_path %> |
+      <%= link_to "Character Stats", user_characters_path(current_user) %> |
         <% if current_user.characters.empty? %>
-        <%= link_to "New Character", new_user_character_path(@user) %>
+        <%= link_to "New Character", new_user_character_path(current_user) %> |
+        <%end%>
+        <% if admin%>
+        <%= link_to "Create Adventure", new_adventure_path %>
         <%end%>
       <%end%>
     </div>

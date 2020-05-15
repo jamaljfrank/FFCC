@@ -1,16 +1,14 @@
 <h1> User Home </h1>
-    <% if admin%>
-        <%= link_to "Create Adventure", new_adventure_path %>
-    <%end%>
+
 <br>
     <% flash.each do |type, msg| %>
-        <div>
+        <h2>
         <%= msg %>
-        </div>
+        </h2>
     <% end %>
 
 <br>
-<h2>Adventures</h2>
+<h3>Choose an Adventure!</h3>
     <% Adventure.all.each do |adv| %>
         <%= link_to adv.title, adventure_path(adv) %>
         <br>
