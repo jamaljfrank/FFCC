@@ -1,9 +1,11 @@
 class CharactersController < ApplicationController
   def new
-    @character = Character.new
+    user_check
+    @character = current_user.characters.build
   end
 
   def index
+    user_check
     @characters = Character.party(current_user)
   end
 
