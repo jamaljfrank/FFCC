@@ -1,24 +1,16 @@
 <h1> User Home </h1>
     <% if admin%>
-        <%= link_to "Create Adventure", new_adventure_path %> 
+        <%= link_to "Create Adventure", new_adventure_path %>
     <%end%>
 <br>
     <% flash.each do |type, msg| %>
-        <h2>
+        <div>
         <%= msg %>
-        </h2>
+        </div>
     <% end %>
+
 <br>
-    <br>
-<br>
-    <% if current_user.characters.empty? %>
-    <%= link_to "New Character", new_user_character_path(@user) %>
-    <%end%>
-<br>
-    <%= link_to "Character Stats", user_characters_path(@user) %> 
-<br>
-<br>
-<h2>Adventures</h1>
+<h2>Adventures</h2>
     <% Adventure.all.each do |adv| %>
         <%= link_to adv.title, adventure_path(adv) %>
         <br>
@@ -26,4 +18,4 @@
         <p>
         <%= adv.flavor%>
         </p>
-    <% end %> 
+    <% end %>
