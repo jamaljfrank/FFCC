@@ -7,7 +7,7 @@ class AdventuresController < ApplicationController
     if admin
       @adventure = Adventure.new
     else
-      redirect_to root_path
+      redirect_to root_path, notice: 'Must be admin, bro.'
     end
   end
 
