@@ -4,11 +4,15 @@ class AdventuresController < ApplicationController
   end
 
   def new
-    @adventure = Adventure.new
+    if admin
+      @adventure = Adventure.new
+    else
+      redirect_to root_path
+    end
   end
 
   def show
-    current_adventure
+    redirect_to root_path unless current_adventure
   end
 
   def create
