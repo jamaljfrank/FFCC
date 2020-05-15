@@ -1,1 +1,2 @@
-module CharactersHelper; end
+module CharactersHelper
+end

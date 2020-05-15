@@ -1,0 +1,27 @@
+=> [[32m#<Adventure:0x00007f3054ea7618[0m
+  id: [1;34m3[0m,
+  title: [31m[1;31m"[0m[31mRiver Belle Path[1;31m"[0m[31m[0m,
+  flavor:
+   [31m[1;31m"[0m[31m[1;35m\"[0m[31mThey say that wicked creatures prowl the road along this beautiful riverbank, but nobody has ever seen one. I once asked a man why. He simply replied, [1;35m\"[0m[31mBecause anyone who happens upon one is promptly eaten![1;35m\"[0m[31m But it is long since anyone has met such a fate. For nowadays, people take another route, far away from the spooky old road. [1;35m\r[0m[31m[1;35m\n[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31mOnly we walk the old way now... travelers in crystal caravans.[1;35m\"[0m[31m            -Unknown Traveler[1;35m\r[0m[31m[1;35m\n[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31m[1;35m\r[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m,
+  boss_lv: [1;34m2[0m,
+  clavat_difficulty: [1;34m2[0m,
+  lilty_difficulty: [1;34m2[0m,
+  selkie_difficulty: [1;34m2[0m,
+  yuke_difficulty: [1;34m4[0m,
+  user_id: [1;34m1[0m,
+  created_at: [1;34;4mWed[0m, [1;34m13[0m [1;34;4mMay[0m [1;34m2020[0m [1;34m06[0m:[1;34m02[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m13[0m [1;34;4mMay[0m [1;34m2020[0m [1;34m06[0m:[1;34m26[0m:[1;34m09[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  boss: [31m[1;31m"[0m[31mGiant Crab[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Adventure:0x00007f3054fa0790[0m
+  id: [1;34m6[0m,
+  title: [31m[1;31m"[0m[31mDeath 4 all[1;31m"[0m[31m[0m,
+  flavor: [31m[1;31m"[0m[31mthe end.[1;31m"[0m[31m[0m,
+  boss_lv: [1;34m11[0m,
+  clavat_difficulty: [1;34m9[0m,
+  lilty_difficulty: [1;34m9[0m,
+  selkie_difficulty: [1;34m9[0m,
+  yuke_difficulty: [1;34m9[0m,
+  user_id: [1;34m1[0m,
+  created_at: [1;34;4mThu[0m, [1;34m14[0m [1;34;4mMay[0m [1;34m2020[0m [1;34m09[0m:[1;34m14[0m:[1;34m59[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mThu[0m, [1;34m14[0m [1;34;4mMay[0m [1;34m2020[0m [1;34m09[0m:[1;34m14[0m:[1;34m59[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  boss: [31m[1;31m"[0m[31mJamal[1;31m"[0m[31m[0m[32m>[0m]
