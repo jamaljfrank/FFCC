@@ -10,10 +10,16 @@
     <%= link_to "Delete Adventure", adventure_path, :method => :delete %>
 <%end%>
 
-<h2><%= @adventure.title%></h2>
-<b> Boss name: <%= @adventure.boss%> </b>
+<h2><%= current_adventure.title%></h2>
+
+<br>
+<br>
+<b> Boss name: <%= current_adventure.boss%> </b>
 <p>
-<%= @adventure.flavor%>
+<%= current_adventure.flavor%>
+<br>
+<br>
+<%= link_to "Adventures by #{current_adventure.user.email}", user_adventures_path(current_adventure.user) %>
 </p>
 <% if !current_user.characters.empty?%>
 <%= form_for :battle do |f| %>

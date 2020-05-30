@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   resources :battles
 
   resources :users do
+    resources :adventures, only: %i[new create index]
+  end
+
+  resources :users do
     resources :characters, only: %i[new create index]
   end
 end

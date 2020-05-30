@@ -1,0 +1,11 @@
+<h1> All Adventures </h1>
+<% @adventures.each do |adv|%>
+<p>
+<h3><%= link_to adv.title, adventure_path(adv) %></h3>
+<b>Boss:</b> <%= adv.boss %>
+<br>
+<br>
+<%= adv.flavor %>
+
+</p>
+<%end%>

@@ -9,11 +9,4 @@
 
 <br>
 <h3>Choose an Adventure!</h3>
-    <% Adventure.all.each do |adv| %>
-        <%= link_to adv.title, adventure_path(adv) %>
-        <br>
-        <b>Boss: <%= adv.boss%></b>
-        <p>
-        <%= adv.flavor%>
-        </p>
-    <% end %>
+   <%= link_to "Adventures Index", adventures_path %>

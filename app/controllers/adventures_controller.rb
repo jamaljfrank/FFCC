@@ -1,6 +1,11 @@
 class AdventuresController < ApplicationController
   def index
-    redirect_to root_path
+    if params[:user_id] && @user = User.find_by_id(params[:user_id])
+      @adventures = @user.adventures
+    else
+      notice: "User doesn't exist" if params[:user_id]
+      @adventures = Adventure.all
+    end
   end
 
   def new
@@ -12,7 +17,7 @@ class AdventuresController < ApplicationController
   end
 
   def show
-    redirect_to root_path unless current_adventure
+    current_adventure
   end
 
   def create

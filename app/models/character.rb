@@ -1,7 +1,9 @@
 class Character < ApplicationRecord
   belongs_to :user
-  has_many :battles
+  has_many :battles, dependent: :destroy
   has_many :adventures, through: :battles
+
+
 
   validates :name, presence: true
   validates :tribe, presence: true
