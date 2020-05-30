@@ -1,6 +1,7 @@
 class Battle < ApplicationRecord
   belongs_to :character
   belongs_to :adventure
+  has_many :users, through: :characters
 
   def level_up
     if adventure.boss_lv >= character.lv
