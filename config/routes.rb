@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'sessions#home'
+  root 'characters#index'
 
   post '/adventures/:id', to: 'battles#create'
 

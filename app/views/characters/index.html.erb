@@ -1,7 +1,18 @@
 <h1>Party Members</h1>
+<br>
+    <% flash.each do |type, msg| %>
+        <h2>
+        <%= msg %>
+        </h2>
+    <% end %>
+<br>
+<br>
 <div>
     <% @characters.each do |char|%>
     <h2><%= char.name %> the <%= char.tribe %><br> Level <%= char.lv %></h2>
 
     <%end%>
 </div>
+<h3>Choose an Adventure!</h3>
+   <%= link_to "Adventures Index", adventures_path %>
+
