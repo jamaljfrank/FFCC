@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  scope :admins, -> { where(admin: true)}
+
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |user|
       user.email = auth.info.email

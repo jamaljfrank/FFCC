@@ -15,6 +15,11 @@
     <%end%>
 </div>
 <h3>Choose an Adventure!</h3>
-   <%= link_to "Adventures Index", adventures_path %>
-
+   <%= link_to "All Adventures", adventures_path %>
+   <h4>By User</h4>
+<% User.admins.each do |admin|%>
+    <%= link_to admin.email, user_adventures_path(admin) %>
+    <br>
+    <br>
+    <% end %>
 
