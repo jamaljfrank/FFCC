@@ -3,7 +3,6 @@ class AdventuresController < ApplicationController
     if params[:user_id] && @user = User.find_by_id(params[:user_id])
       @adventures = @user.adventures
     else
-      notice: "User doesn't exist" if params[:user_id]
       @adventures = Adventure.all
     end
   end
@@ -12,7 +11,7 @@ class AdventuresController < ApplicationController
     if admin
       @adventure = Adventure.new
     else
-      redirect_to root_path, notice: 'Must be admin, bro.'
+      redirect_to root_path, notice: 'Must be admin.'
     end
   end
 

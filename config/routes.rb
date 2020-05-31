@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  root 'characters#index'
+  root 'sessions#home'
 
   post '/adventures/:id', to: 'battles#create'
 
   get '/users/:id/party', to: 'characters#index'
+
+  post '/users/:id/characters/new', to: 'characters#create'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -14,8 +16,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#google'
   get '/auth/failure', to: redirect('/')
 
+  resources :users
   resources :adventures
-  resources :characters
   resources :battles
 
   resources :users do

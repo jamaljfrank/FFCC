@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def home
-    redirect_to user_path(current_user) if logged_in?
+    redirect_to user_characters_path(current_user) if logged_in?
   end
 
   def destroy
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user && @user.save && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: 'Welcome back!'
+      redirect_to user_characters_path(@user), notice: 'Welcome back!'
     else
       redirect_to root_path, notice: 'Invalid login. It happens.'
     end

@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-<%= form_for(@character) do |f| %>
+<%= form_for(:character) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, required: true %>
 <br>
@@ -20,5 +20,5 @@
 <br>
 <br>
     <%= f.submit "Submit" %>
-    
+
 <%end%>

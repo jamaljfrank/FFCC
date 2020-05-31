@@ -1,20 +1,23 @@
 class CharactersController < ApplicationController
 
   def index
-    user_check
-    @characters = Character.party(current_user)
+    if current_user
+      @characters = Character.party(current_user)
+    else
+      render 'new'
+    end
   end
 
   def new
-    user_check
     party_limit
+    user_check
     @character = current_user.characters.build
   end
 
   def create
     @character = current_user.characters.build(character_params)
     if @character.save
-      redirect_to root_path, notice: "You're ready for an Adventure!"
+      redirect_to adventures_path, notice: "You're ready for an Adventure!"
     else
       render 'new', notice: 'Sorry, one character at a time.'
     end
@@ -28,7 +31,7 @@ class CharactersController < ApplicationController
 
     def party_limit
     if !current_user.characters.empty?
-      redirect_to root_path, notice: "Party limit reached."
+      redirect_to adventures_path, notice: "Party limit reached. You're ready for an adventure!"
     end
   end
 end
