@@ -5,8 +5,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :email, presence: true
-  validates :email, uniqueness: true
+  validates_presence_of :email
+  validates_uniqueness_of :email
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |user|

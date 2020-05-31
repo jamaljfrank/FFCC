@@ -5,8 +5,8 @@ class Character < ApplicationRecord
 
 
 
-  validates :name, presence: true
-  validates :tribe, presence: true
+  validates_presence_of :name, :tribe
+
 
   scope :party, ->(user) { where('user_id = ?', user.id) }
 

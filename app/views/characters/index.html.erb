@@ -9,10 +9,12 @@
 <br>
 <div>
     <% @characters.each do |char|%>
-    <h2><%= char.name %> the <%= char.tribe %><br> Level <%= char.lv %></h2>
+    <h2><%= char.name %> the <%= char.tribe %><br> </h2>
+    <b>Level <%= char.lv %></b>
 
     <%end%>
 </div>
 <h3>Choose an Adventure!</h3>
    <%= link_to "Adventures Index", adventures_path %>
+
 
