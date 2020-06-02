@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :authentication_check, :admin, :current_adventure, :user_check
+  helper_method :current_user, :authentication_check, :admin, :current_adventure, :user_check, :admin_check
 
   private
 
@@ -26,5 +26,9 @@ class ApplicationController < ActionController::Base
 
   def user_check
     redirect_to root_path, notice: "User doesn't match or exist." unless params[:user_id] && current_user = User.find_by_id(params[:user_id])
+  end
+
+  def admin_check
+    redirect_to root_path, notice: 'Must be admin.' unless admin
   end
 end
