@@ -8,11 +8,8 @@ class AdventuresController < ApplicationController
   end
 
   def new
-    if admin
-      @adventure = Adventure.new
-    else
-      redirect_to root_path, notice: 'Must be admin.'
-    end
+    admin_check
+    @adventure = Adventure.new
   end
 
   def show
@@ -29,6 +26,7 @@ class AdventuresController < ApplicationController
   end
 
   def edit
+    admin_check
     current_adventure
   end
 

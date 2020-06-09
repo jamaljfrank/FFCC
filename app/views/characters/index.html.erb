@@ -2,24 +2,23 @@
 <br>
     <% flash.each do |type, msg| %>
         <h2>
-        <%= msg %>
+            <%= msg %>
         </h2>
     <% end %>
 <br>
 <br>
 <div>
     <% @characters.each do |char|%>
-    <h2><%= char.name %> the <%= char.tribe %><br> </h2>
-    <b>Level <%= char.lv %></b>
-
+        <h2><%= char.name %> the <%= char.tribe %><br> </h2>
+        <b>Level <%= char.lv %></b>
     <%end%>
 </div>
 <h3>Choose an Adventure!</h3>
-   <%= link_to "All Adventures", adventures_path %>
-   <h4>By User</h4>
+<%= link_to "All Adventures", adventures_path %>
+<h4>By User</h4>
 <% User.admins.each do |admin|%>
+    <p>
     <%= link_to admin.email, user_adventures_path(admin) %>
-    <br>
-    <br>
-    <% end %>
+    </p>
+<% end %>
 
